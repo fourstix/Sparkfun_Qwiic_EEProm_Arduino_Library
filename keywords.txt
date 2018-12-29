@@ -1,0 +1,51 @@
+#######################################
+# Syntax Coloring Map For SFE_MicroOLED
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+QwiicEEProm	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+end	KEYWORD2
+check	KEYWORD2
+count	KEYWORD2
+full	KEYWORD2
+freespace	KEYWORD2
+size	KEYWORD2
+tell	KEYWORD2
+validPos	KEYWORD2
+setPos	KEYWORD2
+rewind	KEYWORD2
+seek	KEYWORD2
+eof	KEYWORD2
+truncate	KEYWORD2
+remove	KEYWORD2
+readln	KEYWORD2
+appendln	KEYWORD2
+append	KEYWORD2
+available	KEYWORD2
+availableForWrite	KEYWORD2
+peak	KEYWORD2
+read	KEYWORD2
+write	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+EEPROM_ADDR	LITERAL1
+EOF	LITERAL1
+SEEK_SET	LITERAL1
+SEEK_CUR	LITERAL1
+SEEK_END	LITERAL1
+MAX_DATA_SIZE	LITERAL1
+HEADER_SIZE	LITERAL1
+DATA_ADDR	LITERAL1
+SIZE_ADDR	LITERAL1
