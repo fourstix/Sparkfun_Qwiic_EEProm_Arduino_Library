@@ -7,11 +7,11 @@ This library makes using the Qwiic EEProm easy. It creates a Stream class so tha
 to QwiicEEProm eeprom using arrays and strings instead of raw bytes.  It supports C-like cursor functions.
 
 For example to add Hello, World! to the Qwiic EEProm with this library all one has to do is:
-
+```
     eeprom.begin()
     eeprom.appendln("Hello, World!);
     eeprom.end();
-
+```
 And your data will be recorded to the EEProm for later review. Please see the examples to get started.
 
 Available commands:
@@ -26,11 +26,12 @@ Available commands:
 * long    **size**() - Return the amount of bytes written to the EEProm
 * boolean **tell**() - Tell the current position of the cursor
 * boolean **validPos**(long pos) - Check to see of a position is valid (between 0 and end of data)
-* boolean **setPos**(long pos) - Set the position of the cursor, returns true if cursor set.
+* boolean **setPos**(long pos) - Set the position of the cursor, returns true if the cursor was set.
 * void    **rewind**() - Set the cursor to the begining of the EEProm data, equivalent to seek(0, SEEK_SET)
-* void    **seek**() - Set cursor to the end of the EEProm data, , equivalent to seek(0, SEEK_END)
+* void    **seek**() - Set cursor to the end of the EEProm data, equivalent to seek(0, SEEK_END)
 * bool    **seek**(long n, int origin) - move the cursor n characters forwards (n > 0) or backwards (n < 0) based on the origin, returns true if cursor moved.
-	  Use one of these defined constants for origin:  
+
+ Use one of these defined constants for origin:  
     **SEEK_SET** - seek from the beginning (n should be positive or zero)  
     **SEEK_CUR** - seek from the current cursor position (n can be positive or negative)  
     **SEEK_END** - seek from end of file (n should be negative or zero)  
@@ -41,21 +42,23 @@ Available commands:
 * size_t  **append**(char *buffer, size_t size) - append size characters of data from a buffer, returns number of characters written
 * size_t  **append**(char *str)- append a string of characters, returns number of characters written
 * size_t  **appendln**(char *str)- append a string of characters with a newline, returns number of characters written
-* void    **readln**(char *buffer, size_t max) - read up to max-1 charaters into a null-terminated string.
-*               The read terminates with \n, EOF or max characters read, and the newline is not included in the string.
-* The following virtual functions are defined as follows:
+* void    **readln**(char *buffer, size_t max) - read up to max-1 charaters into a null-terminated string.  The read terminates with \n, EOF or max characters read, and the newline is not included in the string.
+
+_The following virtual functions are defined_
 * int     **peek**() - returns the next character at the cursor, without advancing the cursor or EOF if at the end of data
 * int     **read**() - returns the character at the cursor and advances the cursor. returns EOF if at the end of data
 * size_t  ** write**(uint8_t) - writes one byte of data, advancing the cursor
 * int     **available**() - returns 1 to indicate one data byte can be read, unless eof() is true
 * int     **availableForWrite**() - returns 1 to indicate one data byte can be written, unless full() is true
-*
-* Note: The append and appendln functions support the flash string macro F("My String").
+
+_Notes:_
+* The append and appendln functions support the flash string macro F("My String").
 *	All of the functions available in Stream and Print (read, write, println, find, etc.) are supported.
-*       Characters are streamed one by one to the EEProm
+* Characters are streamed one by one to the EEProm
+* The EEProm is initialized with a 8-byte header, containing a 4 byte hex signature followed by the data size as a long value.
 
 
-Library written by Gaston Williams).
+Library written by Gaston Williams (fourstix).
 
 Repository Contents
 -------------------
@@ -105,6 +108,3 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.**
-
-
-- Gaston Williams
