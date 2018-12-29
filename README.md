@@ -7,7 +7,7 @@ This library makes using the Qwiic EEProm easy. It creates a Stream class so tha
 to QwiicEEProm eeprom using arrays and strings instead of raw bytes.  It supports C-like cursor functions.
 
 For example to add Hello, World! to the Qwiic EEProm with this library all one has to do is:
-    
+
     eeprom.begin()
     eeprom.appendln("Hello, World!);
     eeprom.end();
@@ -29,12 +29,11 @@ Available commands:
 * boolean **setPos**(long pos) - Set the position of the cursor, returns true if cursor set.
 * void    **rewind**() - Set the cursor to the begining of the EEProm data, equivalent to seek(0, SEEK_SET)
 * void    **seek**() - Set cursor to the end of the EEProm data, , equivalent to seek(0, SEEK_END)
-* bool    **seek**(long n, int origin) - move the cursor n characters forwards (n > 0) or backwards (n < 0)
-*                       based on the origin, returns true if cursor moved. 
-*	  Use one of these defined constants for origin:
-* 		SEEK_SET - seek from the beginning (n should be positive or zero)
-* 		SEEK_CUR - seek from the current cursor position (n can be positive or negative)
-*		SEEK_END - seek from end of file (n should be negative or zero)
+* bool    **seek**(long n, int origin) - move the cursor n characters forwards (n > 0) or backwards (n < 0) based on the origin, returns true if cursor moved.
+	  Use one of these defined constants for origin:  
+    **SEEK_SET** - seek from the beginning (n should be positive or zero)  
+    **SEEK_CUR** - seek from the current cursor position (n can be positive or negative)  
+    **SEEK_END** - seek from end of file (n should be negative or zero)  
 * void    **truncate**() - truncate data by setting end of data at the current cursor position
 * void    **remove**() - remove data from EEProm by setting end of data to the beginning (zero) position
 * size_t  **append**(uint8_t b) - append a byte of data at the end, returns number of bytes written
@@ -51,20 +50,20 @@ Available commands:
 * int     **available**() - returns 1 to indicate one data byte can be read, unless eof() is true
 * int     **availableForWrite**() - returns 1 to indicate one data byte can be written, unless full() is true
 *
-* Note: The append and appendln functions support the flash string macro F("My String"). 
+* Note: The append and appendln functions support the flash string macro F("My String").
 *	All of the functions available in Stream and Print (read, write, println, find, etc.) are supported.
 *       Characters are streamed one by one to the EEProm
 
-	
+
 Library written by Gaston Williams).
 
 Repository Contents
 -------------------
 
-* **/examples** - Example sketches for the library (.ino). Run these from the Arduino IDE. 
+* **/examples** - Example sketches for the library (.ino). Run these from the Arduino IDE.
 * **/src** - Source files for the library (.cpp, .h).
-* **keywords.txt** - Keywords from this library that will be highlighted in the Arduino IDE. 
-* **library.properties** - General library properties for the Arduino package manager. 
+* **keywords.txt** - Keywords from this library that will be highlighted in the Arduino IDE.
+* **library.properties** - General library properties for the Arduino package manager.
 
 Documentation
 --------------
@@ -75,7 +74,7 @@ Documentation
 License Information
 -------------------
 
-This product is _**open source**_! 
+This product is _**open source**_!
 
 Various bits of the code have different licenses applied. Anything SparkFun wrote is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
 
