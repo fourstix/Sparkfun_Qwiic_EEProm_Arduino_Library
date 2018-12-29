@@ -27,8 +27,9 @@ Available commands:
 * boolean **tell**() - Tell the current position of the cursor
 * boolean **validPos**(long pos) - Check to see of a position is valid (between 0 and end of data)
 * boolean **setPos**(long pos) - Set the position of the cursor, returns true if the cursor was set.
-* void    **rewind**() - Set the cursor to the begining of the EEProm data, equivalent to seek(0, SEEK_SET)
-* void    **seek**() - Set cursor to the end of the EEProm data, equivalent to seek(0, SEEK_END)
+  setPos(0) will set the cursor to the beginning of the data, and setPos(EOF) will set it to the end of the data.
+* void    **rewind**() - Set the cursor to the begining of the EEProm data, equivalent to seek(0, SEEK_SET) or setPos(0)
+* void    **seek**() - Set cursor to the end of the EEProm data, equivalent to seek(0, SEEK_END) or setPos(EOF)
 * bool    **seek**(long n, int origin) - move the cursor n characters forwards (n > 0) or backwards (n < 0) based on the origin, returns true if cursor moved.
 
  Use one of these defined constants for origin:  
@@ -47,13 +48,14 @@ Available commands:
 _The following virtual functions are defined_
 * int     **peek**() - returns the next character at the cursor, without advancing the cursor or EOF if at the end of data
 * int     **read**() - returns the character at the cursor and advances the cursor. returns EOF if at the end of data
-* size_t  ** write**(uint8_t) - writes one byte of data, advancing the cursor
+* size_t  **write**(uint8_t) - writes one byte of data, advancing the cursor
 * int     **available**() - returns 1 to indicate one data byte can be read, unless eof() is true
 * int     **availableForWrite**() - returns 1 to indicate one data byte can be written, unless full() is true
 
 _Notes:_
 * The append and appendln functions support the flash string macro F("My String").
-*	All of the functions available in Stream and Print (read, write, println, find, etc.) are supported.
+* All of the functions available in Stream and Print (read, write, println, find, etc.) are supported.
+* The constant **EOF** is defined to represent the end of data
 * Characters are streamed one by one to the EEProm
 * The EEProm is initialized with a 8-byte header, containing a 4 byte hex signature followed by the data size as a long value.
 
