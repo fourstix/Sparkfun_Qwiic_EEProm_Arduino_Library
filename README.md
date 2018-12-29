@@ -74,13 +74,37 @@ Documentation
 License Information
 -------------------
 
-This product is _**open source**_!
+This code is public domain under the MIT License, but please buy me a beer
+if you use this and we meet someday (Beerware).
 
-Various bits of the code have different licenses applied. Anything SparkFun wrote is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
+References to Sparkfun products, programs or services do not imply
+that they will be available in all countries in which Sparkfun operates.
 
-Please use, reuse, and modify these files as you see fit. Please maintain attribution to SparkFun Electronics and release any derivative under the same license.
+Sparkfun, the Sparkfun logo, and other Sparkfun products and services are
+trademarks of the Sparkfun Electronics Corporation, in the United States,
+other countries or both. Other company, product, or services names may be trademarks or services marks of others.
 
-Distributed as-is; no warranty is given.
+This code, firmware, and software is released under the [MIT License](http://opensource.org/licenses/MIT).
 
-- Your friends at SparkFun.
+The MIT License (MIT)
+
+Copyright (c) 2018 by Gaston Williams
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.**
+
+
 - Gaston Williams
